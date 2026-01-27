@@ -1,6 +1,6 @@
 /* ===== Footer Base ===== */
 .footer-custom {
-  background-color: #ffffff; /* أبيض */
+  background-color: #ffffff; 
   font-size: 14px;
   color: #2b2f3a;
   padding-top: 2rem;
@@ -77,7 +77,7 @@
   background-color: rgba(0,0,0,0.05);
   font-size: 13px;
 }
-/* Make footer sticky bottom if page content is small */
+/* footer sticky bottom / content small */
 body {
   display: flex;
   flex-direction: column;
@@ -86,3 +86,4 @@ body {
 .page-content {
   flex: 1;
 }
+

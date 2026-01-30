@@ -1,182 +1,127 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Velora - User Registration</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#137fec",
-                        "background-light": "#f6f7f8",
-                        "background-dark": "#101922",
-                    },
-                    fontFamily: {
-                        "display": ["Inter"]
-                    },
-                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
-                },
-            },
-        }
-    </script>
-    <style type="text/tailwindcss">
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .error-message {
-            display: none;
-        }
-        .input-error {
-            border-color: #ef4444 !important;
-        }
-        .input-error + .error-message {
-            display: block;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopEase - User Registration</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      background: url("../images/login-hero-bg.jpg") center/cover no-repeat;
+    }
+
+    .auth-card {
+      max-width: 480px;
+      border-radius: 16px;
+    }
+
+    .form-control {
+      background-color: #f8fafc;
+      height: 48px;
+    }
+
+    .btn-primary {
+      background-color: #137fec;
+      border: none;
+    }
+
+    .error-message {
+      display: none;
+    }
+  </style>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display transition-colors duration-300">
-    <div id="header"></div>
-    <main class="flex-grow flex items-center justify-center py-12 px-4">
-        <div
-            class="w-full max-w-[480px] bg-white dark:bg-gray-900 shadow-xl rounded-xl overflow-hidden border border-[#e7edf3] dark:border-gray-800">
-            <div class="flex border-b border-[#cfdbe7] dark:border-gray-800">
-                <button
-                    class="flex-1 flex flex-col items-center justify-center border-b-[3px] border-transparent text-[#4c739a] dark:text-gray-400 pb-[13px] pt-5 hover:text-primary transition-colors">
-                    <p class="text-sm font-bold leading-normal tracking-[0.015em]">Login</p>
-                </button>
-                <button
-                    class="flex-1 flex flex-col items-center justify-center border-b-[3px] border-primary text-[#0d141b] dark:text-white pb-[13px] pt-5">
-                    <p class="text-sm font-bold leading-normal tracking-[0.015em]">Register</p>
-                </button>
-            </div>
-            <div class="p-8">
-                <h2 class="text-[#0d141b] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em] pb-6">
-                    Create Account</h2>
-                <form class="space-y-4">
-                    <div class="flex flex-col w-full">
-                        <label class="text-[#0d141b] dark:text-gray-200 text-sm font-medium leading-normal pb-2">Full
-                            Name</label>
-                        <input
-                            class="form-input flex w-full rounded-lg text-[#0d141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfdbe7] dark:border-gray-700 bg-slate-50 dark:bg-gray-800 h-12 placeholder:text-[#4c739a] px-4 text-base font-normal"
-                            placeholder="John Doe" type="text" />
-                        <p class="error-message text-red-500 text-xs mt-1">Full name is required</p>
-                    </div>
-                    <div class="flex flex-col w-full">
-                        <label class="text-[#0d141b] dark:text-gray-200 text-sm font-medium leading-normal pb-2">Email
-                            Address</label>
-                        <input
-                            class="form-input flex w-full rounded-lg text-[#0d141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfdbe7] dark:border-gray-700 bg-slate-50 dark:bg-gray-800 h-12 placeholder:text-[#4c739a] px-4 text-base font-normal"
-                            placeholder="example@mail.com" type="email" />
-                        <p class="error-message text-red-500 text-xs mt-1">Please enter a valid email address</p>
-                    </div>
-                    <div class="flex flex-col w-full">
-                        <label
-                            class="text-[#0d141b] dark:text-gray-200 text-sm font-medium leading-normal pb-2">Password</label>
-                        <div class="flex w-full items-stretch rounded-lg relative">
-                            <input
-                                class="form-input flex w-full rounded-lg text-[#0d141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfdbe7] dark:border-gray-700 bg-slate-50 dark:bg-gray-800 h-12 placeholder:text-[#4c739a] px-4 text-base font-normal"
-                                placeholder="••••••••" type="password" />
-                            <button
-                                class="absolute right-3 top-1/2 -translate-y-1/2 text-[#4c739a] dark:text-gray-400 flex items-center justify-center"
-                                type="button">
-                                <span class="material-symbols-outlined">visibility</span>
-                            </button>
-                        </div>
-                        <p class="error-message text-red-500 text-xs mt-1">Password must be at least 8 characters</p>
-                    </div>
-                    <div class="flex flex-col w-full">
-                        <label class="text-[#0d141b] dark:text-gray-200 text-sm font-medium leading-normal pb-2">Confirm
-                            Password</label>
-                        <div class="flex w-full items-stretch rounded-lg relative">
-                            <input
-                                class="form-input flex w-full rounded-lg text-[#0d141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfdbe7] dark:border-gray-700 bg-slate-50 dark:bg-gray-800 h-12 placeholder:text-[#4c739a] px-4 text-base font-normal"
-                                placeholder="••••••••" type="password" />
-                            <button
-                                class="absolute right-3 top-1/2 -translate-y-1/2 text-[#4c739a] dark:text-gray-400 flex items-center justify-center"
-                                type="button">
-                                <span class="material-symbols-outlined">visibility</span>
-                            </button>
-                        </div>
-                        <p class="error-message text-red-500 text-xs mt-1">Passwords do not match</p>
-                    </div>
-                    <div class="flex items-center gap-2 px-1 py-2">
-                        <input
-                            class="size-4 rounded border-[#cfdbe7] dark:border-gray-700 text-primary focus:ring-primary bg-slate-50 dark:bg-gray-800"
-                            id="terms" type="checkbox" />
-                        <label class="text-sm font-medium text-[#4c739a] dark:text-gray-400 cursor-pointer" for="terms">
-                            I agree to the Terms of Service
-                        </label>
-                    </div>
-                    <button
-                        class="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-all shadow-md mt-4"
-                        type="submit">
-                        <span>Register</span>
-                    </button>
-                </form>
-                <div class="relative my-8">
-                    <div class="absolute inset-0 flex items-center">
-                        <div class="w-full border-t border-[#cfdbe7] dark:border-gray-800"></div>
-                    </div>
-                    <div class="relative flex justify-center text-xs uppercase">
-                        <span class="bg-white dark:bg-gray-900 px-2 text-[#4c739a] dark:text-gray-400">Or sign up
-                            with</span>
-                    </div>
-                </div>
-                <div class="flex justify-center">
-                    <button
-                        class="w-full flex items-center justify-center gap-3 h-12 border border-[#cfdbe7] dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors bg-white dark:bg-transparent">
-                        <svg class="size-5" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"
-                                fill="#4285F4"></path>
-                            <path
-                                d="M6.3 14.7l6.6 4.8C14.6 15.8 19 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 6.1 29.6 4 24 4c-7.2 0-13.4 3.4-17.7 8.7z"
-                                fill="#EA4335"></path>
-                            <path
-                                d="M24 44c5.6 0 10.6-2.1 14.5-5.5l-6.4-5.2c-2.3 1.5-5.1 2.4-8.1 2.4-5 0-9.4-2.8-11.1-6.8l-6.6 5.1C10.6 40.6 16.8 44 24 44z"
-                                fill="#34A853"></path>
-                            <path
-                                d="M6.3 33.3c-.8-2.4-1.3-5-1.3-7.7s.5-5.3 1.3-7.7L-.3 12.8C-1.4 16.3-2 20.1-2 24s.6 7.7 1.7 11.2l6.6-5.1z"
-                                fill="#FBBC05"></path>
-                        </svg>
-                        <span class="text-base font-medium text-[#0d141b] dark:text-white">Sign up with Google</span>
-                    </button>
-                </div>
-                <div class="mt-8 flex flex-col items-center gap-4">
-                    <div
-                        class="flex items-center gap-2 text-[10px] text-[#4c739a] dark:text-gray-500 uppercase tracking-widest bg-gray-50 dark:bg-gray-800/50 px-3 py-1.5 rounded-full border border-[#cfdbe7] dark:border-gray-800 group relative cursor-help">
-                        <span class="material-symbols-outlined text-xs">database</span>
-                        <span>Data managed via Local Storage</span>
-                        <div
-                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-gray-800 text-white text-[10px] rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none text-center">
-                            Your account information is stored securely in your browser's local storage for this
-                            demonstration.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer class="py-8 text-center border-t border-[#e7edf3] dark:border-gray-800">
-        <p class="text-sm text-[#4c739a] dark:text-gray-500">© 2024 ShopPro E-commerce Platform. All rights reserved.
-        </p>
-    </footer>
-    <script src="../JAVASCRIPT/LoadComponents.js"></script>
-</body>
+<body class="d-flex flex-column">
 
+  <main class="flex-grow-1 d-flex align-items-center justify-content-center py-5 px-3">
+    <div class="card shadow-lg auth-card w-100">
+      
+      <!-- Tabs -->
+      <div class="d-flex border-bottom">
+        <button class="btn w-50 text-secondary fw-bold py-3">Login</button>
+        <button class="btn w-50 fw-bold py-3 border-bottom border-3 border-primary">Register</button>
+      </div>
+
+      <!-- Form -->
+      <div class="card-body p-4">
+        <h2 class="fw-bold mb-4">Create Account</h2>
+
+        <form class="d-flex flex-column gap-3">
+
+          <div>
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control rounded-3" placeholder="Enter your Fullname">
+            <small class="text-danger error-message">Full name is required</small>
+          </div>
+
+          <div>
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control rounded-3" placeholder="Enter your email">
+            <small class="text-danger error-message">Please enter a valid email</small>
+          </div>
+
+          <div>
+            <label class="form-label">Password</label>
+            <div class="position-relative">
+              <input type="password" class="form-control rounded-3" placeholder="Enter your password">
+              <span class="material-symbols-outlined position-absolute top-50 end-0 translate-middle-y me-3 text-secondary">
+                visibility
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <label class="form-label">Confirm Password</label>
+            <div class="position-relative">
+              <input type="password" class="form-control rounded-3" placeholder="Confirm your password">
+              <span class="material-symbols-outlined position-absolute top-50 end-0 translate-middle-y me-3 text-secondary">
+                visibility
+              </span>
+            </div>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="terms">
+            <label class="form-check-label text-secondary" for="terms">
+              I agree to the Terms of Service
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 py-2 rounded-3 fw-bold">
+            Register
+          </button>
+        </form>
+
+        <!-- Divider -->
+        <div class="text-center my-4 text-secondary text-uppercase small">
+          Or sign up with
+        </div>
+
+        <!-- Google -->
+        <button class="btn w-100 border d-flex align-items-center justify-content-center gap-2 py-2 rounded-3">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" width="20">
+          <span class="fw-medium">Sign up with Google</span>
+        </button>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-3 text-secondary small">
+    © 2024 ShopEase E-commerce Platform. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

@@ -7,5 +7,5 @@ function loadComponent(id, file) {
 }
 
 loadComponent("header", "../HTML/Header.html");
-// loadComponent("nav", "../HTML/Nav.html");
+ loadComponent("nav", "../AdminHtml/nav.html");
  loadComponent("footer", "../HTML/footer.html");

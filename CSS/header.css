@@ -79,12 +79,3 @@ header {
     font-size: 18px;
     max-width: 450px;
 }
-
-.hero-section button {
-    border: none;
-    padding: 10px 15px;
-    border-radius: 10px;
-    color: #f6f2ea;
-    background-color: #1E40AF;
-
-}

@@ -1,4 +1,4 @@
-/* Image control */
+/***************************cart page ****************************/
 .cart-img {
     height: 90px;
     object-fit: cover;
@@ -27,10 +27,9 @@
 }
 
 .btn-remove:hover {
-    color: #dc3545;
+     color: #dc3545 !important;
 }
-
-/* Wishlist Image */
+/***************************Wishlist page ****************************/
 .wishlist-img {
     height: 180px;
     object-fit: cover;
@@ -54,5 +53,5 @@
 }
 
 .btn-wishlist-remove:hover {
-    color: #dc3545;
+     color: #dc3545 !important;
 }

@@ -7,6 +7,6 @@ function loadComponent(id, file) {
 }
 
 loadComponent("navbar", "../HTML/navbar.html");
- loadComponent("footer", "../HTML/footer.html");
+loadComponent("footer", "../HTML/footer.html");
 
  
